@@ -17,12 +17,15 @@ foreach(SOURCE_FILE IN LISTS DAY_SOURCES)
     get_filename_component(FILENAME ${SOURCE_FILE} NAME)
     
     string(REGEX MATCH "day([0-9]+)" DAY_MATCH ${SOURCE_FILE})
-    string(REGEX REPLACE "day([0-9]+)" "\\1" DAY ${DAY_MATCH})
-    
+    string(REGEX REPLACE ".*day([0-9]+).*" "\\1" DAY ${DAY_MATCH})
+
     string(REGEX MATCH "part([0-9]+)" PART_MATCH ${FILENAME})
-    string(REGEX REPLACE "part([0-9]+)" "\\1" PART ${PART_MATCH})
+    string(REGEX REPLACE ".*part([0-9]+).*" "\\1" PART ${PART_MATCH})
     
     set(EXEC_NAME "d${DAY}_p${PART}")
+    
+    message(STATUS "Processing file: ${SOURCE_FILE}")
+    message(STATUS "Day: ${DAY}, Part: ${PART}")
     
     add_executable(${EXEC_NAME} ${SOURCE_FILE})
     target_link_libraries(${EXEC_NAME} PRIVATE helpers)
