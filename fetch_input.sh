@@ -13,11 +13,13 @@ PART1_FILE="$DAY_FOLDER/part1.cpp"
 if [ ! -f "$PART1_FILE" ]; then
     cat <<EOL > "$PART1_FILE"
 #include <bits/stdc++.h>
-#include "utils/helpers.h"
+#include "helpers.h"
 #define int long long
 
+using namespace std;
+
 int32_t main() {
-    std::vector<std::string> input = readInput("$DAY_FOLDER/input.txt");
+    std::vector<std::string> input = readInput("../$DAY_FOLDER/input.txt");
 
     // Write solution for Part 1 here
     std::cout << "Solution for Part 1 of Day $DAY!" << std::endl;
@@ -34,11 +36,13 @@ PART2_FILE="$DAY_FOLDER/part2.cpp"
 if [ ! -f "$PART2_FILE" ]; then
     cat <<EOL > "$PART2_FILE"
 #include <bits/stdc++.h>
-#include "utils/helpers.h"
+#include "helpers.h"
 #define int long long
 
+using namespace std;
+
 int32_t main() {
-    std::vector<std::string> input = readInput("$DAY_FOLDER/input.txt");
+    std::vector<std::string> input = readInput("../$DAY_FOLDER/input.txt");
 
     // Write solution for Part 2 here
     std::cout << "Solution for Part 2 of Day $DAY!" << std::endl;

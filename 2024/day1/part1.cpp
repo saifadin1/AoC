@@ -1,12 +1,29 @@
 #include <bits/stdc++.h>
-#include "utils/helpers.h"
+#include "helpers.h"
 #define int long long
 
-int32_t main() {
-    std::vector<std::string> input = readInput("2024/day1/input.txt");
+using namespace std;
 
-    // Write solution for Part 1 here
-    std::cout << "Solution for Part 1 of Day 1!" << std::endl;
+int32_t main() {
+    std::vector<std::string> input = readInput("../2024/day1/input.txt");
+
+    int ans = 0;
+    vector<int> a , b;
+    for(string line : input){
+        istringstream ss(line);
+        int x , z;
+        ss >> x >> z;
+        a.push_back(x);
+        b.push_back(z);
+    }
+
+    sort(a.begin() , a.end());
+    sort(b.begin() , b.end());
+
+    for(int i = 0 ; i < a.size() ; i++){
+        ans += abs(a[i] - b[i]);
+    }
+    cout << ans << '\n';
 
     return 0;
 }
