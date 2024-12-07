@@ -1,10 +1,10 @@
-cmake_minimum_required(VERSION 3.22)
+cmake_minimum_required(VERSION 3.22) 
 
-project(AdventOfCode2024)
+project(AdventOfCode2024) 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-set(HELPERS_SRC utils/helpers.cpp)
+set(HELPERS_SRC utils/helpers.cpp) 
 set(HELPERS_HEADER utils/helpers.h)
 
 include_directories(${CMAKE_SOURCE_DIR}/utils)
